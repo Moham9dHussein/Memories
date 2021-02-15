@@ -50,6 +50,9 @@ namespace Memories
       t.Columns.Add("Word", typeof(string));
       t.Columns.Add("Sentance", typeof(string));
       t.Columns.Add("Translation", typeof(string));
+      t.Columns["Word"].ReadOnly = true;
+      t.Columns["Sentance"].ReadOnly = true;
+      t.Columns["Translation"].ReadOnly = true;
       //t.Columns.Add("Select", typeof(bool));
       //t.Columns.Add(new DataColumn("Select", typeof(bool)));
     }

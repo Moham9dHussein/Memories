@@ -1,21 +1,15 @@
 <?xml version="1.0" standalone="yes"?>
 <DocumentElement>
   <Words>
-    <Word>sdasdsad</Word>
-    <Sentance>fa</Sentance>
-    <Translation>asdddddasdasd</Translation>
+    <Word>adjust</Word>
+    <Sentance>I want you to adjust your attitude, mister.</Sentance>
+    <Translation>asdasd</Translation>
     <Select>false</Select>
   </Words>
   <Words>
-    <Word>sd</Word>
-    <Sentance>asdasd</Sentance>
-    <Translation>asdddddasd</Translation>
-    <Select>false</Select>
-  </Words>
-  <Words>
-    <Word>sd</Word>
-    <Sentance>asd</Sentance>
-    <Translation>asd</Translation>
+    <Word>adjust</Word>
+    <Sentance>I want you to adjust your attitude, mister.</Sentance>
+    <Translation>لكن أنا أريدك - أن تعدّل سلوكك يا سيد</Translation>
     <Select>false</Select>
   </Words>
 </DocumentElement>

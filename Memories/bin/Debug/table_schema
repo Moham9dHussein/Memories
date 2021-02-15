@@ -6,9 +6,9 @@
         <xs:element name="Words">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Word" type="xs:string" minOccurs="0" />
-              <xs:element name="Sentance" type="xs:string" minOccurs="0" />
-              <xs:element name="Translation" type="xs:string" minOccurs="0" />
+              <xs:element name="Word" msdata:ReadOnly="true" type="xs:string" minOccurs="0" />
+              <xs:element name="Sentance" msdata:ReadOnly="true" type="xs:string" minOccurs="0" />
+              <xs:element name="Translation" msdata:ReadOnly="true" type="xs:string" minOccurs="0" />
               <xs:element name="Select" type="xs:boolean" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
