@@ -12,15 +12,17 @@ using System.Windows.Forms;
 
 namespace Memories
 {
-  public partial class Form1 : Form
+
+
+
+  public partial class Form1Test : Form
   {
-    DataTable table = new DataTable("Verbs");
+    DataTable table = new DataTable("Words");
 
     public TextBox Txt_time
     {
       get { return txt_time; }
     }
-
     public CheckBox CbRandom
     {
       get
@@ -28,25 +30,33 @@ namespace Memories
         return cbRandom;
       }
     }
-    public Form1()
+    public Form1Test()
     {
       InitializeComponent();
+
     }
     private void Form1_Load(object sender, EventArgs e)
     {
+
+      //table = Mem.copyDGVtoDT(dataGridView1);
       Mem.readTable(table);
-      if (table.Columns.Count < 1) Mem.createTable(table);
+      if (table.Columns.Count < 1)
+      {
+        Mem.createTable(table);
+        table.Columns.Add("Select", typeof(bool));
+      }
       //fillData();
+
       dataGridView1.DataSource = table;
-      DataGridViewCheckBoxColumn chk = new DataGridViewCheckBoxColumn();
-      dataGridView1.Columns.Add(chk);
     }
     private void btnAdd_Click(object sender, EventArgs e)
     {
       Mem.addWord(txt_word, txt_sentence, txt_translation, table);
+      dataGridView1.DataSource = table;
       dataGridView1.ClearSelection();
       dataGridView1.Rows[0].Selected = true;
       dataGridView1.FirstDisplayedScrollingRowIndex = 0;
+
       Mem.writeTable(table);
     }
     private void btnRemove_Click(object sender, EventArgs e)
@@ -54,7 +64,6 @@ namespace Memories
       Mem.removeWord(dataGridView1);
       Mem.writeTable(table);
     }
-
     private void dataGridView1_KeyDown(object sender, KeyEventArgs e)
     {
       if (e.KeyCode == Keys.Delete)
@@ -65,9 +74,9 @@ namespace Memories
     }
     private void btnStart_Click(object sender, EventArgs e)
     {
-      //Form2 f2 = new Form2(this);
+      Form2 f2 = new Form2(this);
       Hide();
-      //f2.ShowDialog();
+      f2.ShowDialog();
       Show();
 
 

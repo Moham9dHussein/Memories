@@ -1,7 +1,6 @@
 C:\Users\HS\source\repos\Memories\Memories\Memories\bin\Debug\Memories.exe.config
 C:\Users\HS\source\repos\Memories\Memories\Memories\bin\Debug\Memories.exe
 C:\Users\HS\source\repos\Memories\Memories\Memories\bin\Debug\Memories.pdb
-C:\Users\HS\source\repos\Memories\Memories\Memories\obj\Debug\Memories.csprojAssemblyReference.cache
 C:\Users\HS\source\repos\Memories\Memories\Memories\obj\Debug\Memories.Form1.resources
 C:\Users\HS\source\repos\Memories\Memories\Memories\obj\Debug\Memories.Form2.resources
 C:\Users\HS\source\repos\Memories\Memories\Memories\obj\Debug\Memories.Properties.Resources.resources
@@ -9,3 +8,5 @@ C:\Users\HS\source\repos\Memories\Memories\Memories\obj\Debug\Memories.csproj.Ge
 C:\Users\HS\source\repos\Memories\Memories\Memories\obj\Debug\Memories.csproj.CoreCompileInputs.cache
 C:\Users\HS\source\repos\Memories\Memories\Memories\obj\Debug\Memories.exe
 C:\Users\HS\source\repos\Memories\Memories\Memories\obj\Debug\Memories.pdb
+C:\Users\HS\source\repos\Memories\Memories\Memories\obj\Debug\Memories.Form1Test.resources
+C:\Users\HS\source\repos\Memories\Memories\Memories\obj\Debug\Memories.csprojAssemblyReference.cache
