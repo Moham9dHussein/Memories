@@ -105,5 +105,24 @@ namespace Memories
       txt_sentence.Text = row.Cells[1].Value.ToString();
       txt_translation.Text = row.Cells[2].Value.ToString();
     }
+
+    private void cbSelectAll_CheckedChanged(object sender, EventArgs e)
+    {
+      bool status = cbSelectAll.Checked;
+      if (status)
+      {
+        for (int i = dataGridView1.Rows.Count - 1; i >= 0; i--)
+        {
+          dataGridView1.Rows[i].Cells[3].Value = true;
+        }
+      }
+      else
+      {
+        for (int i = dataGridView1.Rows.Count - 1; i >= 0; i--)
+        {
+          dataGridView1.Rows[i].Cells[3].Value = false;
+        }
+      }
+    }
   }
 }
