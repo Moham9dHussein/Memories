@@ -171,6 +171,8 @@ namespace Memories
       //reference
       //https://docs.microsoft.com/en-us/dotnet/desktop/winforms/controls/selected-cells-rows-and-columns-datagridview?view=netframeworkdesktop-4.8
 
+      //Method 1 (Using selected rows)
+      /*
       Int32 selectedRowCount = dgv.Rows.GetRowCount(DataGridViewElementStates.Selected);
       //must select row to remove
       if (selectedRowCount > 0)
@@ -192,6 +194,26 @@ namespace Memories
         {
           dgv.Rows.RemoveAt(item);
         }
+      }
+      */
+      // Method 2 (Using checked rows)
+      List<int> index = new List<int>();
+      for (int i = dgv.Rows.Count - 1; i >= 0; i--)
+      {
+        bool delete = (bool)dgv.Rows[i].Cells[3].Value;
+        if (delete)
+        {
+          DataGridViewRow rowRemove = dgv.Rows[i];
+          MessageBox.Show(rowRemove.ToString());
+          //dgv.Rows.Remove(rowRemove);
+          index.Add(rowRemove.Index);
+        }
+      }
+
+      foreach (int item in index)
+      {
+        //dgv.Rows.RemoveAt(item);
+        dgv.Rows.RemoveAt(item);
       }
 
     }
