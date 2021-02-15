@@ -19,6 +19,7 @@ namespace Memories
   {
     DataTable table = new DataTable("Words");
 
+    int indexRow;
     public TextBox Txt_time
     {
       get { return txt_time; }
@@ -85,6 +86,24 @@ namespace Memories
     private void button1_Click(object sender, EventArgs e)
     {
       //Mem.addSentenceCol(txt_word,txt_sentence,txt_translation, table);
+    }
+
+    private void btnEdit_Click(object sender, EventArgs e)
+    {
+      DataGridViewRow newDataRow = dataGridView1.Rows[indexRow];
+      newDataRow.Cells[0].Value = txt_word.Text;
+      newDataRow.Cells[1].Value = txt_sentence.Text;
+      newDataRow.Cells[2].Value = txt_translation.Text;
+    }
+
+    private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+    {
+      indexRow = e.RowIndex;
+      DataGridViewRow row = dataGridView1.Rows[indexRow];
+
+      txt_word.Text = row.Cells[0].Value.ToString();
+      txt_sentence.Text = row.Cells[1].Value.ToString();
+      txt_translation.Text = row.Cells[2].Value.ToString();
     }
   }
 }
