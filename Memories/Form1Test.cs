@@ -99,11 +99,19 @@ namespace Memories
     private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
     {
       indexRow = e.RowIndex;
-      DataGridViewRow row = dataGridView1.Rows[indexRow];
+      if (indexRow >= 0)
+      {
 
-      txt_word.Text = row.Cells[0].Value.ToString();
-      txt_sentence.Text = row.Cells[1].Value.ToString();
-      txt_translation.Text = row.Cells[2].Value.ToString();
+
+        DataGridViewRow row = dataGridView1.Rows[indexRow];
+
+        txt_word.Text = row.Cells[0].Value.ToString();
+        txt_sentence.Text = row.Cells[1].Value.ToString();
+        txt_translation.Text = row.Cells[2].Value.ToString();
+
+        // dataGridView1.DefaultCellStyle.SelectionBackColor = dataGridView1.DefaultCellStyle.BackColor;
+        // dataGridView1.DefaultCellStyle.SelectionForeColor = dataGridView1.DefaultCellStyle.ForeColor;
+      }
     }
 
     private void cbSelectAll_CheckedChanged(object sender, EventArgs e)
@@ -121,6 +129,21 @@ namespace Memories
         for (int i = dataGridView1.Rows.Count - 1; i >= 0; i--)
         {
           dataGridView1.Rows[i].Cells[3].Value = false;
+        }
+      }
+    }
+
+    private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+    {
+      if (dataGridView1.Columns[e.ColumnIndex].Name == "Select")
+      {
+        if (indexRow >= 0)
+        {
+          bool flag = (bool)dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].EditedFormattedValue;
+          if (flag)
+            dataGridView1.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Green;
+          else
+            dataGridView1.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.White;
         }
       }
     }

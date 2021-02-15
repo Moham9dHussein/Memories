@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -166,6 +167,17 @@ namespace Memories
 
     }
 
+    public static void rowColor(DataGridView dgv, int index)
+    {
+      for (int i = 0; i < dgv.Rows.Count; i++)
+      {
+        bool status = (bool)dgv.Rows[i].Cells[3].Value;
+        if (status)
+        {
+          dgv.Rows[i].DefaultCellStyle.BackColor = Color.Green;
+        }
+      }
+    }
     public static void removeWord(DataGridView dgv)
     {
       //reference
