@@ -29,6 +29,7 @@ namespace Memories
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.btnTranslate = new System.Windows.Forms.Button();
             this.lblWord = new System.Windows.Forms.Label();
@@ -37,9 +38,8 @@ namespace Memories
             this.btnStop = new System.Windows.Forms.Button();
             this.lblCounter = new System.Windows.Forms.Label();
             this.lblTimer = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnShowAndHide = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // btnTranslate
@@ -68,7 +68,7 @@ namespace Memories
             this.lblSentence.AutoSize = true;
             this.lblSentence.BackColor = System.Drawing.Color.Gainsboro;
             this.lblSentence.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSentence.Location = new System.Drawing.Point(159, 151);
+            this.lblSentence.Location = new System.Drawing.Point(159, 147);
             this.lblSentence.Name = "lblSentence";
             this.lblSentence.Size = new System.Drawing.Size(86, 29);
             this.lblSentence.TabIndex = 1;
@@ -79,7 +79,7 @@ namespace Memories
             this.lblTranslation.AutoSize = true;
             this.lblTranslation.BackColor = System.Drawing.Color.Gainsboro;
             this.lblTranslation.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTranslation.Location = new System.Drawing.Point(159, 228);
+            this.lblTranslation.Location = new System.Drawing.Point(159, 232);
             this.lblTranslation.Name = "lblTranslation";
             this.lblTranslation.Size = new System.Drawing.Size(86, 29);
             this.lblTranslation.TabIndex = 1;
@@ -111,22 +111,11 @@ namespace Memories
             // 
             this.lblTimer.AutoSize = true;
             this.lblTimer.BackColor = System.Drawing.Color.Transparent;
-            this.lblTimer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTimer.Location = new System.Drawing.Point(835, 241);
+            this.lblTimer.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTimer.Location = new System.Drawing.Point(877, 247);
             this.lblTimer.Name = "lblTimer";
-            this.lblTimer.Size = new System.Drawing.Size(77, 29);
+            this.lblTimer.Size = new System.Drawing.Size(0, 32);
             this.lblTimer.TabIndex = 1;
-            this.lblTimer.Text = "Timer";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(266, 31);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(536, 282);
-            this.dataGridView1.TabIndex = 2;
             // 
             // btnShowAndHide
             // 
@@ -138,13 +127,18 @@ namespace Memories
             this.btnShowAndHide.Text = "Show/Hide";
             this.btnShowAndHide.UseVisualStyleBackColor = true;
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(999, 450);
             this.Controls.Add(this.btnShowAndHide);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.lblTranslation);
             this.Controls.Add(this.lblSentence);
             this.Controls.Add(this.lblTimer);
@@ -156,7 +150,6 @@ namespace Memories
             this.Name = "Form2";
             this.Text = "Memories";
             this.Load += new System.EventHandler(this.Form2_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -171,7 +164,7 @@ namespace Memories
         private System.Windows.Forms.Button btnStop;
         private System.Windows.Forms.Label lblCounter;
         private System.Windows.Forms.Label lblTimer;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnShowAndHide;
+        private System.Windows.Forms.Timer timer1;
     }
 }

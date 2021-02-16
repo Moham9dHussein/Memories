@@ -1,44 +1,32 @@
 <?xml version="1.0" standalone="yes"?>
 <DocumentElement>
   <Words>
-    <Word>asd</Word>
-    <Sentance>asd</Sentance>
-    <Translation>asd</Translation>
+    <Word>kkkk</Word>
+    <Sentance>kkkk</Sentance>
+    <Translation>kkkkkkk</Translation>
     <Select>false</Select>
   </Words>
   <Words>
-    <Word>adjust</Word>
-    <Sentance>sdasd</Sentance>
-    <Translation>sadsd</Translation>
-    <Select>true</Select>
+    <Word>hjhjhj</Word>
+    <Sentance>hjhjhj</Sentance>
+    <Translation>hjhjhj</Translation>
+    <Select>false</Select>
   </Words>
   <Words>
-    <Word>adjust</Word>
-    <Sentance>sdasdff</Sentance>
-    <Translation>asddff</Translation>
-    <Select>true</Select>
+    <Word>hhh</Word>
+    <Sentance>hhh</Sentance>
+    <Translation>hhh</Translation>
+    <Select>false</Select>
   </Words>
   <Words>
-    <Word>adjust</Word>
-    <Sentance>sdasd</Sentance>
-    <Translation>asddff</Translation>
-    <Select>true</Select>
+    <Word>qwe</Word>
+    <Sentance>qwe</Sentance>
+    <Translation>qwe</Translation>
+    <Select>false</Select>
   </Words>
   <Words>
-    <Word>adjust</Word>
-    <Sentance>sdasd</Sentance>
-    <Translation>asddf</Translation>
-    <Select>true</Select>
-  </Words>
-  <Words>
-    <Word>adjust</Word>
-    <Sentance>sdasd</Sentance>
-    <Translation>sdasd</Translation>
-    <Select>true</Select>
-  </Words>
-  <Words>
-    <Word>adjust</Word>
-    <Sentance>sdasd</Sentance>
+    <Word>asd</Word>
+    <Sentance>asd</Sentance>
     <Translation>asd</Translation>
     <Select>false</Select>
   </Words>
