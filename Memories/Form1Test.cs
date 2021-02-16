@@ -18,7 +18,12 @@ namespace Memories
   public partial class Form1Test : Form
   {
     DataTable table = new DataTable("Words");
+    DataTable tableSelected = new DataTable();
 
+    public DataTable TableSelected
+    {
+      get { return tableSelected; }
+    }
     int indexRow;
     public TextBox Txt_time
     {
@@ -34,7 +39,6 @@ namespace Memories
     public Form1Test()
     {
       InitializeComponent();
-
     }
     private void Form1_Load(object sender, EventArgs e)
     {
@@ -47,10 +51,18 @@ namespace Memories
         table.Columns.Add("Select", typeof(bool));
       }
       //fillData();
+      //////////////
+      if (tableSelected.Columns.Count < 1)
+      {
+        tableSelected.Columns.Add("Word", typeof(string));
+        tableSelected.Columns.Add("Sentance", typeof(string));
+        tableSelected.Columns.Add("Translation", typeof(string));
+      }
+      //////////////
 
       dataGridView1.DataSource = table;
 
-      dataGridView1.Columns["Word"].ReadOnly = true;
+
 
     }
     private void btnAdd_Click(object sender, EventArgs e)
@@ -78,11 +90,18 @@ namespace Memories
     }
     private void btnStart_Click(object sender, EventArgs e)
     {
-      Form2 f2 = new Form2(this);
-      Hide();
-      f2.ShowDialog();
-      Show();
-
+      if ((Mem.countSelectedValue(dataGridView1) == 0 && dataGridView1.Rows.Count >= 5) || Mem.countSelectedValue(dataGridView1) >= 5)
+      {
+        Mem.selectedValuesTable(dataGridView1, tableSelected);
+        Form2 f2 = new Form2(this);
+        Hide();
+        f2.ShowDialog();
+        Show();
+      }
+      else
+      {
+        MessageBox.Show("By default at least selected 5 words");
+      }
 
     }
 
@@ -101,20 +120,20 @@ namespace Memories
 
     private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
     {
-      // indexRow = e.RowIndex;
-      // if (indexRow >= 0)
-      // {
+      indexRow = e.RowIndex;
+      if (indexRow >= 0)
+      {
 
 
-      //   DataGridViewRow row = dataGridView1.Rows[indexRow];
+        DataGridViewRow row = dataGridView1.Rows[indexRow];
 
-      //   txt_word.Text = row.Cells[0].Value.ToString();
-      //   txt_sentence.Text = row.Cells[1].Value.ToString();
-      //   txt_translation.Text = row.Cells[2].Value.ToString();
+        txt_word.Text = row.Cells[0].Value.ToString();
+        txt_sentence.Text = row.Cells[1].Value.ToString();
+        txt_translation.Text = row.Cells[2].Value.ToString();
 
-      //   // dataGridView1.DefaultCellStyle.SelectionBackColor = dataGridView1.DefaultCellStyle.BackColor;
-      //   // dataGridView1.DefaultCellStyle.SelectionForeColor = dataGridView1.DefaultCellStyle.ForeColor;
-      // }
+        // dataGridView1.DefaultCellStyle.SelectionBackColor = dataGridView1.DefaultCellStyle.BackColor;
+        // dataGridView1.DefaultCellStyle.SelectionForeColor = dataGridView1.DefaultCellStyle.ForeColor;
+      }
     }
 
     private void cbSelectAll_CheckedChanged(object sender, EventArgs e)
@@ -125,6 +144,7 @@ namespace Memories
         for (int i = dataGridView1.Rows.Count - 1; i >= 0; i--)
         {
           dataGridView1.Rows[i].Cells[3].Value = true;
+          dataGridView1.Rows[i].DefaultCellStyle.BackColor = Color.Green;
         }
       }
       else
@@ -132,28 +152,26 @@ namespace Memories
         for (int i = dataGridView1.Rows.Count - 1; i >= 0; i--)
         {
           dataGridView1.Rows[i].Cells[3].Value = false;
+          dataGridView1.Rows[i].DefaultCellStyle.BackColor = Color.White;
         }
       }
     }
 
     private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
     {
-      // if (dataGridView1.Columns[e.ColumnIndex].Name == "Select")
-      // {
-      //   if (indexRow >= 0)
-      //   {
-      //     bool flag = (bool)dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].EditedFormattedValue;
-      //     if (flag)
-      //       dataGridView1.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Green;
-      //     else
-      //       dataGridView1.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.White;
-      //   }
-      // }
+      if (dataGridView1.Columns[e.ColumnIndex].Name == "Select")
+      {
+        if (indexRow >= 0)
+        {
+          bool flag = (bool)dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].EditedFormattedValue;
+          if (flag)
+            dataGridView1.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Green;
+          else
+            dataGridView1.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.White;
+        }
+      }
     }
 
-    private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
-    {
 
-    }
   }
 }

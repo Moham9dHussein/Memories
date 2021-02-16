@@ -18,6 +18,7 @@ namespace Memories
   public partial class Form2 : Form
   {
     Form1Test f1;
+    DataTable dataTable;
     int time;
     bool random;
     public Form2() : this(null) { }
@@ -28,8 +29,10 @@ namespace Memories
     }
     private void Form2_Load(object sender, EventArgs e)
     {
-      time = int.Parse(f1.Txt_time.Text);
-      random = f1.CbRandom.Checked;
+      //time = int.Parse(f1.Txt_time.Text);
+      //random = f1.CbRandom.Checked;
+      dataTable = f1.TableSelected;
+      dataGridView1.DataSource = dataTable;
     }
 
     private void btnStop_Click(object sender, EventArgs e)

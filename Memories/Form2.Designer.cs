@@ -37,6 +37,9 @@ namespace Memories
             this.btnStop = new System.Windows.Forms.Button();
             this.lblCounter = new System.Windows.Forms.Label();
             this.lblTimer = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnShowAndHide = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnTranslate
@@ -115,11 +118,33 @@ namespace Memories
             this.lblTimer.TabIndex = 1;
             this.lblTimer.Text = "Timer";
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(266, 31);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 62;
+            this.dataGridView1.RowTemplate.Height = 28;
+            this.dataGridView1.Size = new System.Drawing.Size(536, 282);
+            this.dataGridView1.TabIndex = 2;
+            // 
+            // btnShowAndHide
+            // 
+            this.btnShowAndHide.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnShowAndHide.Location = new System.Drawing.Point(805, 360);
+            this.btnShowAndHide.Name = "btnShowAndHide";
+            this.btnShowAndHide.Size = new System.Drawing.Size(144, 60);
+            this.btnShowAndHide.TabIndex = 3;
+            this.btnShowAndHide.Text = "Show/Hide";
+            this.btnShowAndHide.UseVisualStyleBackColor = true;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(999, 450);
+            this.Controls.Add(this.btnShowAndHide);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.lblTranslation);
             this.Controls.Add(this.lblSentence);
             this.Controls.Add(this.lblTimer);
@@ -131,6 +156,7 @@ namespace Memories
             this.Name = "Form2";
             this.Text = "Memories";
             this.Load += new System.EventHandler(this.Form2_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -145,5 +171,7 @@ namespace Memories
         private System.Windows.Forms.Button btnStop;
         private System.Windows.Forms.Label lblCounter;
         private System.Windows.Forms.Label lblTimer;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btnShowAndHide;
     }
 }

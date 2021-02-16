@@ -150,6 +150,39 @@ namespace Memories
 
     }
 
+    public static bool isExist2(string w, string s, string t, DataTable dt, out int id)
+    {
+      bool result = false;
+      id = 0;
+      for (int i = 0; i < dt.Rows.Count; i++)
+      {
+        //if (w.Text == dgv.Rows[i].Cells[0].ToString() && s.Text == dgv.Rows[i].Cells[1].ToString() && t.Text == dgv.Rows[i].Cells[2].ToString())
+        if (w == dt.Rows[i][0].ToString() && s == dt.Rows[i][1].ToString() && t == dt.Rows[i][2].ToString())
+        {
+          result = true;
+          id = i;
+
+          break;
+        }
+        else
+        {
+          result = false;
+        }
+
+      }
+
+      //   foreach (DataRow dr in dt.Rows)
+      // {
+      //     if (dr["Name"].ToString() == txtName.Text.Trim())
+      //     {
+      //         ifExist = true;
+      //     }
+      // }
+
+      return result;
+
+    }
+
     public static void addWord(TextBox w, TextBox s, TextBox t, DataTable dt)
     {
       if (w.Text.Trim() != "" && s.Text.Trim() != "" && t.Text.Trim() != "")
@@ -219,7 +252,6 @@ namespace Memories
         if (delete)
         {
           DataGridViewRow rowRemove = dgv.Rows[i];
-          MessageBox.Show(rowRemove.ToString());
           //dgv.Rows.Remove(rowRemove);
           index.Add(rowRemove.Index);
         }
@@ -233,6 +265,63 @@ namespace Memories
 
     }
 
+    public static int countSelectedValue(DataGridView dgv)
+    {
+      int n = 0;
+      for (int i = 0; i < dgv.Rows.Count; i++)
+      {
+        bool selected = (bool)dgv.Rows[i].Cells[3].Value;
+        if (selected)
+        {
+          n++;
+        }
+      }
+      return n;
+    }
+    public static void selectedValuesTable(DataGridView dgv, DataTable dt)
+    {
+      int id;
+      if (countSelectedValue(dgv) == 0 && dgv.Rows.Count >= 5)
+      {
+        for (int i = 0; i < 5; i++)
+        {
+          if (!isExist2(dgv.Rows[i].Cells[0].Value.ToString(), dgv.Rows[i].Cells[1].Value.ToString(), dgv.Rows[i].Cells[2].Value.ToString(), dt, out id))
+          {
+            dt.Rows.Add(dgv.Rows[i].Cells[0].Value, dgv.Rows[i].Cells[1].Value, dgv.Rows[i].Cells[2].Value);
+          }
+        }
+
+      }
+      else if (countSelectedValue(dgv) >= 5)
+      {
+        for (int i = 0; i < dgv.Rows.Count; i++)
+        {
+          bool status = (bool)dgv.Rows[i].Cells[3].Value;
+
+          if (status)
+          {
+
+            if (!isExist2(dgv.Rows[i].Cells[0].Value.ToString(), dgv.Rows[i].Cells[1].Value.ToString(), dgv.Rows[i].Cells[2].Value.ToString(), dt, out id))
+            {
+              dt.Rows.Add(dgv.Rows[i].Cells[0].Value, dgv.Rows[i].Cells[1].Value, dgv.Rows[i].Cells[2].Value);
+            }
+          }
+          else
+          {
+            for (int j = 0; j < dt.Rows.Count; j++)
+            {
+
+              if (isExist2(dgv.Rows[i].Cells[0].Value.ToString(), dgv.Rows[i].Cells[1].Value.ToString(), dgv.Rows[i].Cells[2].Value.ToString(), dt, out id))
+              {
+                dt.Rows.RemoveAt(id);
+                //dt.Rows.Remove(dt.Rows[j]);
+              }
+            }
+          }
+        }
+      }
+
+    }
 
 
     //private void startMemory()
