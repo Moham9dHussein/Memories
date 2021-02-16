@@ -41,7 +41,7 @@ namespace Memories
       }
       //lblTimer.Text = time.ToString();
       dataTable = f1.TableSelected;
-      lblCounter.Text = string.Format("{0} / {1}", 1, dataTable.Rows.Count);
+      label6.Text = string.Format("{0} / {1}", 1, dataTable.Rows.Count);
       random = f1.CbRandom.Checked;
       //dataGridView1.DataSource = dataTable;
     }
@@ -76,7 +76,7 @@ namespace Memories
           lblTranslation.Text = dataTable.Rows[count - 1][2].ToString();
           /////////////////
 
-          lblCounter.Text = string.Format("{0} / {1}", count, dataTable.Rows.Count);
+          label6.Text = string.Format("{0} / {1}", count, dataTable.Rows.Count);
         }
         else
         {
@@ -88,11 +88,11 @@ namespace Memories
           lblSentence.Text = dataTable.Rows[count][1].ToString();
           lblTranslation.Text = dataTable.Rows[count][2].ToString();
           /////////////////
-          lblCounter.Text = string.Format("{0} / {1}", count + 1, dataTable.Rows.Count);
+          label6.Text = string.Format("{0} / {1}", count + 1, dataTable.Rows.Count);
 
         }
       }
-      lblTimer.Text = i.ToString();
+      label4.Text = i.ToString();
     }
   }
 }
