@@ -21,5 +21,5 @@
 
 
 ## License
-Memories App is licensed under the GNU General Public License v3.0. See the [LICENSE](https://github.com/hsayed21/Memories/blob/master/LICENSE)
+`Memories App` is licensed under the GNU General Public License v3.0. See the [LICENSE](https://github.com/hsayed21/Memories/blob/master/LICENSE)
 file for more information.
