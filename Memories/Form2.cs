@@ -17,7 +17,7 @@ namespace Memories
 
   public partial class Form2 : Form
   {
-    Form1Test f1;
+    Form1 f1;
     bool isFormShow = false;
     bool isPause = false;
     bool isTranslate = false;
@@ -46,7 +46,7 @@ namespace Memories
       return _random.Next(min, max);
     }
     public Form2() : this(null) { }
-    public Form2(Form1Test _f1)
+    public Form2(Form1 _f1)
     {
       InitializeComponent();
       f1 = _f1;

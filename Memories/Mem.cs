@@ -39,11 +39,17 @@ namespace Memories
     #region 4 Basics Fun
     public static void readTable(DataTable t)
     {
-      if (File.Exists(Application.StartupPath + "\\table_schema") && File.Exists(Application.StartupPath + "\\table_verbs"))
+
+      string pathSchema = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDoc‌​uments), "Memories", "table_schema");
+      string pathXML = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDoc‌​uments), "Memories", "table_verbs");
+
+      if (File.Exists(pathSchema) && File.Exists(pathXML))
       {
-        t.ReadXmlSchema(Application.StartupPath + "\\table_schema");
-        t.ReadXml(Application.StartupPath + "\\table_verbs");
+        //Exists
+        t.ReadXmlSchema(pathSchema);
+        t.ReadXml(pathXML);
       }
+
     }
     public static void createTable(DataTable t)
     {
@@ -113,9 +119,19 @@ namespace Memories
     }
     public static void writeTable(DataTable t)
     {
+
+      string rootPath = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDoc‌​uments), "Memories");
+      // If directory does not exist, create it. 
+      if (!Directory.Exists(rootPath))
+      {
+        Directory.CreateDirectory(rootPath);
+      }
+      string pathSchema = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDoc‌​uments), "Memories", "table_schema");
+      string pathXML = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDoc‌​uments), "Memories", "table_verbs");
+
       // table schema
-      t.WriteXmlSchema(Application.StartupPath + "\\table_schema");
-      t.WriteXml(Application.StartupPath + "\\table_verbs");
+      t.WriteXmlSchema(pathSchema);
+      t.WriteXml(pathXML);
     }
     #endregion
 
@@ -202,7 +218,6 @@ namespace Memories
       }
 
     }
-
     public static void rowColor(DataGridView dgv, int index)
     {
       for (int i = 0; i < dgv.Rows.Count; i++)
@@ -264,7 +279,6 @@ namespace Memories
       }
 
     }
-
     public static int countSelectedValue(DataGridView dgv)
     {
       int n = 0;
@@ -327,6 +341,19 @@ namespace Memories
     {
       int number = 0;
       return int.TryParse(input, out number);
+
+      //Method 2(Using Regex)
+      // string s = "123";
+      // if (Regex.IsMatch(s, @"^\d+$"))
+      // {
+      //   Console.WriteLine("Given string is numeric");
+      // }
+      // else
+      // {
+      //   Console.WriteLine("Given string is non-numeric");
+      // }
+
+
     }
     public static bool formIsExist(Form frmOpen)
     {
@@ -361,46 +388,5 @@ namespace Memories
       return false;
     }
 
-    //private void startMemory()
-    //{
-
-    //    //RowsCount = table.Rows.Count;
-    //    //int i =  dataGridView1.SelectedRows =1
-    //    R = new string[table.Rows.Count, 3];
-    //    // First 3 Row
-    //    if ((table.Rows.Count >= 1 && table.Rows.Count <= 3 && (dataGridView1.SelectedCells.Count == 1 || dataGridView1.SelectedCells.Count == 0)) || (table.Rows.Count > 3 && (dataGridView1.SelectedCells.Count == 1 || dataGridView1.SelectedCells.Count == 0)))
-    //    {
-    //        //R1 = dataGridView1.Rows[0];
-    //        //R2 = dataGridView1.Rows[1];
-    //        //R3 = dataGridView1.Rows[2];
-    //        //// R1
-    //        //R[0, 0] = Form1.R1.Cells[0].Value.ToString();
-    //        //R[0, 1] = Form1.R1.Cells[1].Value.ToString();
-    //        //R[0, 2] = Form1.R1.Cells[2].Value.ToString();
-
-    //        for (int i = 0; i < table.Rows.Count; i++)
-    //        {
-    //            for (int j = 0; j < 3; j++)
-    //            {
-    //                //R[i, j] = dataGridView1.Rows[i].Cells[j].Value.ToString();
-    //            }
-    //        }
-    //        // Goto Form 2
-    //        //this.Hide();
-    //        Form2 frm2 = new Form2();
-    //        frm2.Show();
-    //    }
-    //    // Multi Selected
-    //    //else if (table.Rows.Count >= 3 && dataGridView1.SelectedCells.Count > 1)
-    //    //{
-    //    //    for (int i = 0; i < table.Rows.Count; i++)
-    //    //    {
-    //    //        for (int j = 0; j < 3; j++)
-    //    //        {
-    //    //            //R[i, j] = dataGridView1.Rows[i].Cells[j].Value.ToString();
-    //    //        }
-    //    //    }
-    //    ////}
-    //}
   }
 }
