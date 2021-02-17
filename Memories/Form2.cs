@@ -27,7 +27,7 @@ namespace Memories
     string txtTranslate = "";
 
     bool isAuto = false;
-    bool isRandom = true;
+    bool isRandom = false;
     DataTable dataTable;
     int time;
     bool random;
@@ -35,7 +35,7 @@ namespace Memories
     int count = 1;
     int countClone = 0;
     int current = 0;
-    bool isFirstTime = false;
+
 
     // Instantiate random number generator.  
     private readonly Random _random = new Random();
@@ -53,6 +53,7 @@ namespace Memories
     }
     private void Form2_Load(object sender, EventArgs e)
     {
+      //isFormOpen = true;
       if (f1.Txt_time.Text == "")
       {
         time = 5;
@@ -65,7 +66,8 @@ namespace Memories
       dataTable = f1.TableSelected;
       lblNumOfWords.Text = dataTable.Rows.Count.ToString();
       lblTimerSec.Text = time.ToString();
-
+      btnShowAndHide.Text = "Show";
+      isFormShow = false;
       //lblTranslation.Visible = false; // Method 1 (Show Translation)
       //dataGridView1.DataSource = dataTable;
     }

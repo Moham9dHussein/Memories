@@ -29,7 +29,6 @@
     private void InitializeComponent()
     {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1Test));
-            this.txt_translation = new System.Windows.Forms.TextBox();
             this.lblWord = new System.Windows.Forms.Label();
             this.lblSentence = new System.Windows.Forms.Label();
             this.lblTranslation = new System.Windows.Forms.Label();
@@ -43,16 +42,9 @@
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnRemove = new System.Windows.Forms.Button();
+            this.txt_translation = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // txt_translation
-            // 
-            this.txt_translation.BackColor = System.Drawing.Color.LightGray;
-            this.txt_translation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            resources.ApplyResources(this.txt_translation, "txt_translation");
-            this.txt_translation.ForeColor = System.Drawing.Color.Green;
-            this.txt_translation.Name = "txt_translation";
             // 
             // lblWord
             // 
@@ -167,6 +159,14 @@
             this.btnRemove.UseVisualStyleBackColor = false;
             this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
+            // txt_translation
+            // 
+            this.txt_translation.BackColor = System.Drawing.Color.LightGray;
+            this.txt_translation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            resources.ApplyResources(this.txt_translation, "txt_translation");
+            this.txt_translation.ForeColor = System.Drawing.Color.Green;
+            this.txt_translation.Name = "txt_translation";
+            // 
             // Form1Test
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -197,7 +197,6 @@
     }
 
     #endregion
-    private System.Windows.Forms.TextBox txt_translation;
     private System.Windows.Forms.Label lblWord;
     private System.Windows.Forms.Label lblSentence;
     private System.Windows.Forms.Label lblTranslation;
@@ -211,6 +210,7 @@
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnRemove;
+        private System.Windows.Forms.TextBox txt_translation;
     }
 }
 

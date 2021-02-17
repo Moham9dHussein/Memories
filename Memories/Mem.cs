@@ -294,6 +294,7 @@ namespace Memories
       }
       else if (countSelectedValue(dgv) >= 5)
       {
+
         for (int i = 0; i < dgv.Rows.Count; i++)
         {
           bool status = (bool)dgv.Rows[i].Cells[3].Value;
@@ -323,6 +324,20 @@ namespace Memories
 
     }
 
+    public static bool formIsExist(Form frmOpen)
+    {
+      FormCollection fc = Application.OpenForms;
+
+      foreach (Form frm in fc)
+      {
+        if (frm.Name == frmOpen.Name)
+        {
+          return true;
+        }
+      }
+
+      return false;
+    }
 
     //private void startMemory()
     //{

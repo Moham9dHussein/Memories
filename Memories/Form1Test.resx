@@ -117,42 +117,11 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="txt_translation.Font" type="System.Drawing.Font, System.Drawing">
-    <value>MV Boli, 10pt</value>
-  </data>
-  <data name="txt_translation.Location" type="System.Drawing.Point, System.Drawing">
-    <value>187, 224</value>
-  </data>
-  <data name="txt_translation.Size" type="System.Drawing.Size, System.Drawing">
-    <value>489, 40</value>
-  </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="txt_translation.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="txt_translation.Text" xml:space="preserve">
-    <value>لكن أنا أريدك - أن تعدّل سلوكك يا سيد</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="txt_translation.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Center</value>
-  </data>
-  <data name="&gt;&gt;txt_translation.Name" xml:space="preserve">
-    <value>txt_translation</value>
-  </data>
-  <data name="&gt;&gt;txt_translation.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txt_translation.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;txt_translation.ZOrder" xml:space="preserve">
-    <value>13</value>
-  </data>
   <data name="lblWord.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="lblWord.Font" type="System.Drawing.Font, System.Drawing">
     <value>Open Sans, 10pt, style=Bold, Italic</value>
   </data>
@@ -264,6 +233,7 @@
   <data name="txt_sentence.Text" xml:space="preserve">
     <value>I want you to adjust your attitude, mister.</value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="txt_sentence.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
   </data>
@@ -542,6 +512,36 @@
   </data>
   <data name="&gt;&gt;btnRemove.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="txt_translation.Font" type="System.Drawing.Font, System.Drawing">
+    <value>MV Boli, 10pt</value>
+  </data>
+  <data name="txt_translation.Location" type="System.Drawing.Point, System.Drawing">
+    <value>187, 224</value>
+  </data>
+  <data name="txt_translation.Size" type="System.Drawing.Size, System.Drawing">
+    <value>489, 40</value>
+  </data>
+  <data name="txt_translation.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="txt_translation.Text" xml:space="preserve">
+    <value>لكن أنا أريدك - أن تعدّل سلوكك يا سيد</value>
+  </data>
+  <data name="txt_translation.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="&gt;&gt;txt_translation.Name" xml:space="preserve">
+    <value>txt_translation</value>
+  </data>
+  <data name="&gt;&gt;txt_translation.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txt_translation.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;txt_translation.ZOrder" xml:space="preserve">
+    <value>13</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

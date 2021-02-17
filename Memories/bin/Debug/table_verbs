@@ -1,6 +1,24 @@
 <?xml version="1.0" standalone="yes"?>
 <DocumentElement>
   <Words>
+    <Word>adjust</Word>
+    <Sentance>I want you to adjust your attitude, mister.</Sentance>
+    <Translation>asdasdasd</Translation>
+    <Select>false</Select>
+  </Words>
+  <Words>
+    <Word>adjust</Word>
+    <Sentance>I want you to adjust your attitude, mistder.</Sentance>
+    <Translation>لكن أنا أريدك - أن تعدّل سلوكك يا سيد</Translation>
+    <Select>false</Select>
+  </Words>
+  <Words>
+    <Word>adjust</Word>
+    <Sentance>I want you to adjust your attitude, mister.</Sentance>
+    <Translation>لكن أنا أريدك - أن تعدّل سلوكك يا سيد</Translation>
+    <Select>false</Select>
+  </Words>
+  <Words>
     <Word>kkkk</Word>
     <Sentance>kkkk</Sentance>
     <Translation>kkkkkkk</Translation>

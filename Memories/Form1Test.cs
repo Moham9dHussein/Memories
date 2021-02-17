@@ -19,6 +19,7 @@ namespace Memories
   {
     DataTable table = new DataTable("Words");
     DataTable tableSelected = new DataTable();
+    bool selected = false;
 
     public DataTable TableSelected
     {
@@ -29,13 +30,15 @@ namespace Memories
     {
       get { return txt_time; }
     }
-
+    Form2 f2;
     public Form1Test()
     {
       InitializeComponent();
+      f2 = new Form2(this);
     }
     private void Form1_Load(object sender, EventArgs e)
     {
+
 
       //table = Mem.copyDGVtoDT(dataGridView1);
       Mem.readTable(table);
@@ -56,6 +59,17 @@ namespace Memories
 
       dataGridView1.DataSource = table;
 
+      if (!selected)
+      {
+        for (int i = dataGridView1.Rows.Count - 1; i >= 0; i--)
+        {
+          dataGridView1.Rows[i].Cells[3].Value = false;
+          dataGridView1.Rows[i].DefaultCellStyle.BackColor = Color.White;
+        }
+      }
+
+      //txt_translation.Select(0, 0); //Deselect text in a textbox
+      this.ActiveControl = lblWord; //Unfocus on textbox
 
 
     }
@@ -82,15 +96,45 @@ namespace Memories
         Mem.writeTable(table);
       }
     }
+
     private void btnStart_Click(object sender, EventArgs e)
     {
+      // if (Application.OpenForms["Form2"] == null)
+      // {
+      //   Form form = new Form();
+      //   //form.MdiParent = this;
+      //   form.Show();
+      // }
+      // else
+      // {
+      //   Application.OpenForms["Form2"].Focus();
+      // }
+
+
+
+      if (Mem.countSelectedValue(dataGridView1) > 0)
+      {
+        selected = true;
+      }
+
       if ((Mem.countSelectedValue(dataGridView1) == 0 && dataGridView1.Rows.Count >= 5) || Mem.countSelectedValue(dataGridView1) >= 5)
       {
         Mem.selectedValuesTable(dataGridView1, tableSelected);
-        Form2 f2 = new Form2(this);
-        Hide();
-        f2.ShowDialog();
-        Show();
+
+        if (Mem.formIsExist(f2))
+        {
+          f2.Focus();
+          //MessageBox.Show("Opened");
+        }
+        else
+        {
+          Hide();
+          f2.ShowDialog();
+          Show();
+          //MessageBox.Show("Un-Opened");
+        }
+
+
       }
       else
       {
@@ -151,9 +195,13 @@ namespace Memories
       {
         if (indexRow >= 0)
         {
+
           bool flag = (bool)dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].EditedFormattedValue;
           if (flag)
+          {
             dataGridView1.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Green;
+
+          }
           else
             dataGridView1.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.White;
         }
