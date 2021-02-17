@@ -14,8 +14,12 @@
 
 ## Design
 
-<img src="designPage1.PNG" align="left"  height="400"/>
+<img src="designPage1.PNG" height="400"/>
 <br>
-<img src="designPage2.PNG" align="left" width="800" height="350" />
+
+<img src="designPage2.PNG"  height="350" />
 
 
+## License
+Memories App is licensed under the GNU General Public License v3.0. See the [LICENSE](https://github.com/hsayed21/Memories/blob/master/LICENSE)
+file for more information.
