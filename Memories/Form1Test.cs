@@ -98,18 +98,6 @@ namespace Memories
 
     private void btnStart_Click(object sender, EventArgs e)
     {
-      // if (Application.OpenForms["Form2"] == null)
-      // {
-      //   Form form = new Form();
-      //   //form.MdiParent = this;
-      //   form.Show();
-      // }
-      // else
-      // {
-      //   Application.OpenForms["Form2"].Focus();
-      // }
-
-
 
       if (Mem.countSelectedValue(dataGridView1) > 0)
       {
@@ -126,13 +114,18 @@ namespace Memories
         }
         else
         {
-          f2 = new Form2(this);
-          Hide();
-          f2.ShowDialog();
-          Show();
-
+          if (txt_time.Text == "" || Mem.checkInt(txt_time.Text))
+          {
+            f2 = new Form2(this);
+            Hide();
+            f2.ShowDialog();
+            Show();
+          }
+          else
+          {
+            MessageBox.Show("Time must be an integer!");
+          }
         }
-
 
       }
       else
@@ -219,6 +212,12 @@ namespace Memories
 
         Mem.writeTable(table);
       }
+      if (e.KeyCode == Keys.Tab)
+      {
+        MessageBox.Show("Pressed tab");
+      }
     }
+
+
   }
 }

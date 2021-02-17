@@ -228,7 +228,7 @@
     <value>489, 40</value>
   </data>
   <data name="txt_sentence.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+    <value>1</value>
   </data>
   <data name="txt_sentence.Text" xml:space="preserve">
     <value>I want you to adjust your attitude, mister.</value>
@@ -259,7 +259,7 @@
     <value>489, 40</value>
   </data>
   <data name="txt_word.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
+    <value>0</value>
   </data>
   <data name="txt_word.Text" xml:space="preserve">
     <value>adjust</value>
@@ -289,7 +289,7 @@
     <value>114, 35</value>
   </data>
   <data name="txt_time.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
+    <value>3</value>
   </data>
   <data name="&gt;&gt;txt_time.Name" xml:space="preserve">
     <value>txt_time</value>
@@ -523,7 +523,7 @@
     <value>489, 40</value>
   </data>
   <data name="txt_translation.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="txt_translation.Text" xml:space="preserve">
     <value>لكن أنا أريدك - أن تعدّل سلوكك يا سيد</value>

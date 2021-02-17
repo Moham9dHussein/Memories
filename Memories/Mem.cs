@@ -323,7 +323,11 @@ namespace Memories
       }
 
     }
-
+    public static bool checkInt(string input)
+    {
+      int number = 0;
+      return int.TryParse(input, out number);
+    }
     public static bool formIsExist(Form frmOpen)
     {
       FormCollection fc = Application.OpenForms;

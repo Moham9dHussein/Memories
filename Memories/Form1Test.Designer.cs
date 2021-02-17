@@ -85,6 +85,7 @@
             resources.ApplyResources(this.txt_time, "txt_time");
             this.txt_time.ForeColor = System.Drawing.Color.Olive;
             this.txt_time.Name = "txt_time";
+            //this.txt_time.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_time_KeyDown);
             // 
             // dataGridView1
             // 
@@ -98,6 +99,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.TabStop = false;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -122,6 +124,7 @@
             this.btnStart.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkTurquoise;
             resources.ApplyResources(this.btnStart, "btnStart");
             this.btnStart.Name = "btnStart";
+            this.btnStart.TabStop = false;
             this.btnStart.UseVisualStyleBackColor = false;
             this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
@@ -134,6 +137,7 @@
             this.btnEdit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gold;
             resources.ApplyResources(this.btnEdit, "btnEdit");
             this.btnEdit.Name = "btnEdit";
+            this.btnEdit.TabStop = false;
             this.btnEdit.UseVisualStyleBackColor = false;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
@@ -146,6 +150,7 @@
             this.btnAdd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.GreenYellow;
             resources.ApplyResources(this.btnAdd, "btnAdd");
             this.btnAdd.Name = "btnAdd";
+            this.btnAdd.TabStop = false;
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
@@ -158,6 +163,7 @@
             this.btnRemove.FlatAppearance.MouseOverBackColor = System.Drawing.Color.OrangeRed;
             resources.ApplyResources(this.btnRemove, "btnRemove");
             this.btnRemove.Name = "btnRemove";
+            this.btnRemove.TabStop = false;
             this.btnRemove.UseVisualStyleBackColor = false;
             this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
