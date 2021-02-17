@@ -68,6 +68,7 @@
             resources.ApplyResources(this.txt_sentence, "txt_sentence");
             this.txt_sentence.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.txt_sentence.Name = "txt_sentence";
+            this.txt_sentence.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textbox_KeyDown);
             // 
             // txt_word
             // 
@@ -76,6 +77,7 @@
             resources.ApplyResources(this.txt_word, "txt_word");
             this.txt_word.ForeColor = System.Drawing.SystemColors.Highlight;
             this.txt_word.Name = "txt_word";
+            this.txt_word.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textbox_KeyDown);
             // 
             // txt_time
             // 
@@ -166,6 +168,7 @@
             resources.ApplyResources(this.txt_translation, "txt_translation");
             this.txt_translation.ForeColor = System.Drawing.Color.Green;
             this.txt_translation.Name = "txt_translation";
+            this.txt_translation.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textbox_KeyDown);
             // 
             // Form1Test
             // 

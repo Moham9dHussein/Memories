@@ -34,7 +34,6 @@ namespace Memories
     public Form1Test()
     {
       InitializeComponent();
-      f2 = new Form2(this);
     }
     private void Form1_Load(object sender, EventArgs e)
     {
@@ -124,14 +123,14 @@ namespace Memories
         if (Mem.formIsExist(f2))
         {
           f2.Focus();
-          //MessageBox.Show("Opened");
         }
         else
         {
+          f2 = new Form2(this);
           Hide();
           f2.ShowDialog();
           Show();
-          //MessageBox.Show("Un-Opened");
+
         }
 
 
@@ -208,6 +207,18 @@ namespace Memories
       }
     }
 
+    private void textbox_KeyDown(object sender, KeyEventArgs e)
+    {
+      if (e.KeyCode == Keys.Enter)
+      {
+        Mem.addWord(txt_word, txt_sentence, txt_translation, table);
+        dataGridView1.DataSource = table;
+        dataGridView1.ClearSelection();
+        dataGridView1.Rows[0].Selected = true;
+        dataGridView1.FirstDisplayedScrollingRowIndex = 0;
 
+        Mem.writeTable(table);
+      }
+    }
   }
 }

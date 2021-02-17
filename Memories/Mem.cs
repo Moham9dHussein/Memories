@@ -327,10 +327,28 @@ namespace Memories
     public static bool formIsExist(Form frmOpen)
     {
       FormCollection fc = Application.OpenForms;
+      //MessageBox.Show(frmOpen.Text);
 
+      if (frmOpen != null)
+      {
+        foreach (Form frm in fc)
+        {
+          if (frm.Name == frmOpen.Name)
+          {
+            return true;
+          }
+        }
+      }
+      return false;
+
+    }
+    public static bool formIsExist2(string frmOpen)
+    {
+      FormCollection fc = Application.OpenForms;
+      //MessageBox.Show(frmOpen.Text);
       foreach (Form frm in fc)
       {
-        if (frm.Name == frmOpen.Name)
+        if (frm.Name == frmOpen)
         {
           return true;
         }

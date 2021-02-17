@@ -75,6 +75,7 @@ namespace Memories
             this.lblWord.BackColor = System.Drawing.Color.LightGray;
             this.lblWord.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblWord.Font = new System.Drawing.Font("MV Boli", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWord.ForeColor = System.Drawing.SystemColors.Highlight;
             this.lblWord.Location = new System.Drawing.Point(159, 72);
             this.lblWord.Name = "lblWord";
             this.lblWord.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -87,6 +88,7 @@ namespace Memories
             this.lblSentence.BackColor = System.Drawing.Color.LightGray;
             this.lblSentence.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblSentence.Font = new System.Drawing.Font("MV Boli", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSentence.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.lblSentence.Location = new System.Drawing.Point(159, 149);
             this.lblSentence.Name = "lblSentence";
             this.lblSentence.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -99,6 +101,7 @@ namespace Memories
             this.lblTranslation.BackColor = System.Drawing.Color.LightGray;
             this.lblTranslation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblTranslation.Font = new System.Drawing.Font("MV Boli", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTranslation.ForeColor = System.Drawing.Color.Green;
             this.lblTranslation.Location = new System.Drawing.Point(159, 226);
             this.lblTranslation.Name = "lblTranslation";
             this.lblTranslation.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
