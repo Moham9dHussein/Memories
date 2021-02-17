@@ -50,6 +50,7 @@ namespace Memories
             this.label3 = new System.Windows.Forms.Label();
             this.btnPause = new System.Windows.Forms.Button();
             this.cbAutoTranslate = new System.Windows.Forms.CheckBox();
+            this.cbRandom = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // btnTranslate
@@ -158,7 +159,7 @@ namespace Memories
             this.btnShowAndHide.Name = "btnShowAndHide";
             this.btnShowAndHide.Size = new System.Drawing.Size(144, 60);
             this.btnShowAndHide.TabIndex = 3;
-            this.btnShowAndHide.Text = "Show/Hide";
+            this.btnShowAndHide.Text = "Show";
             this.btnShowAndHide.UseVisualStyleBackColor = false;
             this.btnShowAndHide.Click += new System.EventHandler(this.btnShowAndHide_Click);
             // 
@@ -270,11 +271,11 @@ namespace Memories
             // 
             // btnPause
             // 
-            this.btnPause.BackColor = System.Drawing.Color.DarkGoldenrod;
-            this.btnPause.FlatAppearance.BorderColor = System.Drawing.Color.Peru;
+            this.btnPause.BackColor = System.Drawing.SystemColors.Info;
+            this.btnPause.FlatAppearance.BorderColor = System.Drawing.Color.Wheat;
             this.btnPause.FlatAppearance.CheckedBackColor = System.Drawing.Color.Red;
-            this.btnPause.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGoldenrod;
-            this.btnPause.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gold;
+            this.btnPause.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Khaki;
+            this.btnPause.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkKhaki;
             this.btnPause.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPause.Font = new System.Drawing.Font("Open Sans Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPause.Location = new System.Drawing.Point(514, 348);
@@ -288,13 +289,32 @@ namespace Memories
             // cbAutoTranslate
             // 
             this.cbAutoTranslate.AutoSize = true;
-            this.cbAutoTranslate.Location = new System.Drawing.Point(14, 369);
+            this.cbAutoTranslate.Font = new System.Drawing.Font("Open Sans", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbAutoTranslate.Location = new System.Drawing.Point(6, 368);
             this.cbAutoTranslate.Name = "cbAutoTranslate";
-            this.cbAutoTranslate.Size = new System.Drawing.Size(139, 24);
+            this.cbAutoTranslate.Size = new System.Drawing.Size(147, 26);
             this.cbAutoTranslate.TabIndex = 12;
             this.cbAutoTranslate.Text = "Auto Translate";
             this.cbAutoTranslate.UseVisualStyleBackColor = true;
             this.cbAutoTranslate.CheckedChanged += new System.EventHandler(this.cbAutoTranslate_CheckedChanged);
+            // 
+            // cbRandom
+            // 
+            this.cbRandom.AutoSize = true;
+            this.cbRandom.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.cbRandom.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
+            this.cbRandom.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.cbRandom.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.cbRandom.Font = new System.Drawing.Font("Open Sans", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbRandom.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.cbRandom.Location = new System.Drawing.Point(6, 313);
+            this.cbRandom.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cbRandom.Name = "cbRandom";
+            this.cbRandom.Size = new System.Drawing.Size(173, 27);
+            this.cbRandom.TabIndex = 20;
+            this.cbRandom.Text = "Change Random";
+            this.cbRandom.UseVisualStyleBackColor = false;
+            this.cbRandom.CheckedChanged += new System.EventHandler(this.cbRandom_CheckedChanged);
             // 
             // Form2
             // 
@@ -302,6 +322,7 @@ namespace Memories
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1072, 452);
+            this.Controls.Add(this.cbRandom);
             this.Controls.Add(this.cbAutoTranslate);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lblTimerSec);
@@ -352,5 +373,6 @@ namespace Memories
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnPause;
         private System.Windows.Forms.CheckBox cbAutoTranslate;
+        private System.Windows.Forms.CheckBox cbRandom;
     }
 }

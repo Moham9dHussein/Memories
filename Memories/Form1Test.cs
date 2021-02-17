@@ -29,13 +29,7 @@ namespace Memories
     {
       get { return txt_time; }
     }
-    public CheckBox CbRandom
-    {
-      get
-      {
-        return cbRandom;
-      }
-    }
+
     public Form1Test()
     {
       InitializeComponent();

@@ -21,13 +21,30 @@ namespace Memories
     bool isFormShow = false;
     bool isPause = false;
     bool isTranslate = false;
+
+    string txtWord = "";
+    string txtSentence = "";
     string txtTranslate = "";
+
     bool isAuto = false;
+    bool isRandom = true;
     DataTable dataTable;
     int time;
     bool random;
     int i = 0;
-    int count = 0;
+    int count = 1;
+    int countClone = 0;
+    int current = 0;
+    bool isFirstTime = false;
+
+    // Instantiate random number generator.  
+    private readonly Random _random = new Random();
+
+    // Generates a random number within a range.      
+    public int RandomNumber(int min, int max)
+    {
+      return _random.Next(min, max);
+    }
     public Form2() : this(null) { }
     public Form2(Form1Test _f1)
     {
@@ -48,7 +65,7 @@ namespace Memories
       dataTable = f1.TableSelected;
       lblNumOfWords.Text = dataTable.Rows.Count.ToString();
       lblTimerSec.Text = time.ToString();
-      random = f1.CbRandom.Checked;
+
       //lblTranslation.Visible = false; // Method 1 (Show Translation)
       //dataGridView1.DataSource = dataTable;
     }
@@ -61,28 +78,59 @@ namespace Memories
 
     private void timer1_Tick(object sender, EventArgs e)
     {
+
       i++;
 
-      /////////////////
-      lblWord.Text = dataTable.Rows[count][0].ToString();
-      lblSentence.Text = dataTable.Rows[count][1].ToString();
-      txtTranslate = dataTable.Rows[count][2].ToString();
-      /////////////////
+      // Always display text on lablel every 1 sec
+      if (isRandom)
+      {
+        /////////////////
+        lblWord.Text = dataTable.Rows[countClone][0].ToString();
+        lblSentence.Text = dataTable.Rows[countClone][1].ToString();
+        //lblTranslation.Visible = false;
+        txtTranslate = dataTable.Rows[countClone][2].ToString();
+        /////////////////
+      }
+      else
+      {
+        /////////////////
+        lblWord.Text = dataTable.Rows[current][0].ToString();
+        lblSentence.Text = dataTable.Rows[current][1].ToString();
+        //lblTranslation.Visible = false;
+        txtTranslate = dataTable.Rows[current][2].ToString();
+        /////////////////
+      }
+
+
+
       if (i > time)
       {
+        countClone = RandomNumber(0, dataTable.Rows.Count);  // 0 : 4     if => dataTable.Rows.Count = 5
         i = 1;
-        if (count >= dataTable.Rows.Count - 1)
+        if (count >= dataTable.Rows.Count)
         {
           //reach to end
           count = 1;
           //dataGridView1.Rows[count - 1].Selected = true;
-
-          /////////////////
-          lblWord.Text = dataTable.Rows[count - 1][0].ToString();
-          lblSentence.Text = dataTable.Rows[count - 1][1].ToString();
-          //lblTranslation.Visible = false; // Method 1 (Show Translation)
-          txtTranslate = dataTable.Rows[count - 1][2].ToString();
-          /////////////////
+          if (isRandom)
+          {
+            /////////////////
+            lblWord.Text = dataTable.Rows[countClone][0].ToString();
+            lblSentence.Text = dataTable.Rows[countClone][1].ToString();
+            //lblTranslation.Visible = false; // Method 1 (Show Translation)
+            txtTranslate = dataTable.Rows[countClone][2].ToString();
+            /////////////////
+          }
+          else
+          {
+            /////////////////
+            current = count - 1;
+            lblWord.Text = dataTable.Rows[count - 1][0].ToString();
+            lblSentence.Text = dataTable.Rows[count - 1][1].ToString();
+            //lblTranslation.Visible = false; // Method 1 (Show Translation)
+            txtTranslate = dataTable.Rows[count - 1][2].ToString();
+            /////////////////
+          }
 
           if (!isAuto)
           {
@@ -100,12 +148,34 @@ namespace Memories
           //start count
           //dataGridView1.Rows[count].Selected = true;
           count++;
-          /////////////////
-          lblWord.Text = dataTable.Rows[count][0].ToString();
-          lblSentence.Text = dataTable.Rows[count][1].ToString();
-          //lblTranslation.Visible = false; // Method 1 (Show Translation)
-          txtTranslate = dataTable.Rows[count][2].ToString();
-          /////////////////
+          current++;
+          if (current > 4)
+          {
+            current = 4;
+          }
+
+          if (isRandom)
+          {
+            /////////////////
+            lblWord.Text = dataTable.Rows[countClone][0].ToString();
+            lblSentence.Text = dataTable.Rows[countClone][1].ToString();
+            //lblTranslation.Visible = false; // Method 1 (Show Translation)
+            txtTranslate = dataTable.Rows[countClone][2].ToString();
+            /////////////////
+            //countClone = rand;
+
+          }
+          else
+          {
+            /////////////////
+            //count = count - 1;
+            lblWord.Text = dataTable.Rows[current][0].ToString();
+            lblSentence.Text = dataTable.Rows[current][1].ToString();
+            //lblTranslation.Visible = false; // Method 1 (Show Translation)
+            txtTranslate = dataTable.Rows[current][2].ToString();
+            /////////////////
+
+          }
 
           if (!isAuto)
           {
@@ -116,11 +186,11 @@ namespace Memories
             lblTranslation.Text = txtTranslate;
           }
 
-
-          lblWordsCount.Text = string.Format("{0}", count + 1);
+          lblWordsCount.Text = string.Format("{0}", count);
 
         }
       }
+
       lblTimerCount.Text = i.ToString();
     }
 
@@ -130,11 +200,13 @@ namespace Memories
       {
         isFormShow = false;
         f1.Hide();
+        btnShowAndHide.Text = "Show";
       }
       else
       {
         isFormShow = true;
         f1.Show();
+        btnShowAndHide.Text = "Hide";
       }
     }
 
@@ -181,6 +253,18 @@ namespace Memories
       {
         isAuto = false;
         lblTranslation.Text = "";
+      }
+    }
+
+    private void cbRandom_CheckedChanged(object sender, EventArgs e)
+    {
+      if (cbRandom.Checked)
+      {
+        isRandom = true;
+      }
+      else
+      {
+        isRandom = false;
       }
     }
   }

@@ -36,7 +36,6 @@
             this.txt_sentence = new System.Windows.Forms.TextBox();
             this.txt_word = new System.Windows.Forms.TextBox();
             this.txt_time = new System.Windows.Forms.TextBox();
-            this.cbRandom = new System.Windows.Forms.CheckBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.cbSelectAll = new System.Windows.Forms.CheckBox();
             this.lblTime = new System.Windows.Forms.Label();
@@ -92,15 +91,6 @@
             resources.ApplyResources(this.txt_time, "txt_time");
             this.txt_time.ForeColor = System.Drawing.Color.Olive;
             this.txt_time.Name = "txt_time";
-            // 
-            // cbRandom
-            // 
-            resources.ApplyResources(this.cbRandom, "cbRandom");
-            this.cbRandom.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.cbRandom.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
-            this.cbRandom.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.cbRandom.Name = "cbRandom";
-            this.cbRandom.UseVisualStyleBackColor = false;
             // 
             // dataGridView1
             // 
@@ -189,7 +179,6 @@
             this.Controls.Add(this.lblTime);
             this.Controls.Add(this.cbSelectAll);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.cbRandom);
             this.Controls.Add(this.txt_time);
             this.Controls.Add(this.txt_word);
             this.Controls.Add(this.txt_sentence);
@@ -215,7 +204,6 @@
     private System.Windows.Forms.TextBox txt_sentence;
     private System.Windows.Forms.TextBox txt_word;
     private System.Windows.Forms.TextBox txt_time;
-    private System.Windows.Forms.CheckBox cbRandom;
     private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.CheckBox cbSelectAll;
         private System.Windows.Forms.Label lblTime;

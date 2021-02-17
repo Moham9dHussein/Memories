@@ -148,7 +148,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txt_translation.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>13</value>
   </data>
   <data name="lblWord.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -181,7 +181,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblWord.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>12</value>
   </data>
   <data name="lblSentence.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -214,7 +214,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblSentence.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>11</value>
   </data>
   <data name="lblTranslation.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -247,7 +247,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblTranslation.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>10</value>
   </data>
   <data name="txt_sentence.Font" type="System.Drawing.Font, System.Drawing">
     <value>MV Boli, 10pt</value>
@@ -277,7 +277,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txt_sentence.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>9</value>
   </data>
   <data name="txt_word.Font" type="System.Drawing.Font, System.Drawing">
     <value>MV Boli, 10pt</value>
@@ -307,7 +307,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txt_word.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>8</value>
   </data>
   <data name="txt_time.Font" type="System.Drawing.Font, System.Drawing">
     <value>Open Sans, 10pt</value>
@@ -331,42 +331,6 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txt_time.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="cbRandom.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbRandom.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>System</value>
-  </data>
-  <data name="cbRandom.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Open Sans, 10pt, style=Bold, Italic</value>
-  </data>
-  <data name="cbRandom.Location" type="System.Drawing.Point, System.Drawing">
-    <value>60, 420</value>
-  </data>
-  <data name="cbRandom.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 5, 4, 5</value>
-  </data>
-  <data name="cbRandom.Size" type="System.Drawing.Size, System.Drawing">
-    <value>203, 32</value>
-  </data>
-  <data name="cbRandom.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
-  </data>
-  <data name="cbRandom.Text" xml:space="preserve">
-    <value>Change Random</value>
-  </data>
-  <data name="&gt;&gt;cbRandom.Name" xml:space="preserve">
-    <value>cbRandom</value>
-  </data>
-  <data name="&gt;&gt;cbRandom.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbRandom.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;cbRandom.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
   <data name="dataGridView1.Location" type="System.Drawing.Point, System.Drawing">
