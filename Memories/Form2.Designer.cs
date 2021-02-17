@@ -48,6 +48,8 @@ namespace Memories
             this.lblWordsCount = new System.Windows.Forms.Label();
             this.lblTimerSec = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnPause = new System.Windows.Forms.Button();
+            this.cbAutoTranslate = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // btnTranslate
@@ -59,12 +61,13 @@ namespace Memories
             this.btnTranslate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkTurquoise;
             this.btnTranslate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTranslate.Font = new System.Drawing.Font("Open Sans Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTranslate.Location = new System.Drawing.Point(222, 348);
+            this.btnTranslate.Location = new System.Drawing.Point(159, 348);
             this.btnTranslate.Name = "btnTranslate";
             this.btnTranslate.Size = new System.Drawing.Size(165, 60);
             this.btnTranslate.TabIndex = 0;
             this.btnTranslate.Text = "Translate";
             this.btnTranslate.UseVisualStyleBackColor = false;
+            this.btnTranslate.Click += new System.EventHandler(this.btnTranslate_Click);
             // 
             // lblWord
             // 
@@ -76,7 +79,6 @@ namespace Memories
             this.lblWord.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lblWord.Size = new System.Drawing.Size(520, 53);
             this.lblWord.TabIndex = 1;
-            this.lblWord.Text = "Hello Word";
             this.lblWord.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblSentence
@@ -89,7 +91,6 @@ namespace Memories
             this.lblSentence.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lblSentence.Size = new System.Drawing.Size(520, 53);
             this.lblSentence.TabIndex = 1;
-            this.lblSentence.Text = "Hello Word";
             this.lblSentence.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblTranslation
@@ -102,7 +103,6 @@ namespace Memories
             this.lblTranslation.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lblTranslation.Size = new System.Drawing.Size(520, 53);
             this.lblTranslation.TabIndex = 1;
-            this.lblTranslation.Text = "Hello Word";
             this.lblTranslation.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnStop
@@ -114,7 +114,7 @@ namespace Memories
             this.btnStop.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gold;
             this.btnStop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStop.Font = new System.Drawing.Font("Open Sans Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStop.Location = new System.Drawing.Point(452, 348);
+            this.btnStop.Location = new System.Drawing.Point(337, 348);
             this.btnStop.Name = "btnStop";
             this.btnStop.Size = new System.Drawing.Size(165, 60);
             this.btnStop.TabIndex = 0;
@@ -160,6 +160,7 @@ namespace Memories
             this.btnShowAndHide.TabIndex = 3;
             this.btnShowAndHide.Text = "Show/Hide";
             this.btnShowAndHide.UseVisualStyleBackColor = false;
+            this.btnShowAndHide.Click += new System.EventHandler(this.btnShowAndHide_Click);
             // 
             // timer1
             // 
@@ -183,11 +184,11 @@ namespace Memories
             // label2
             // 
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Open Sans", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Open Sans", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DarkKhaki;
-            this.label2.Location = new System.Drawing.Point(873, 218);
+            this.label2.Location = new System.Drawing.Point(876, 215);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(48, 72);
+            this.label2.Size = new System.Drawing.Size(48, 92);
             this.label2.TabIndex = 5;
             this.label2.Text = "|";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -210,7 +211,7 @@ namespace Memories
             this.lblNumOfWords.BackColor = System.Drawing.Color.Transparent;
             this.lblNumOfWords.Font = new System.Drawing.Font("Open Sans", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNumOfWords.ForeColor = System.Drawing.Color.Orange;
-            this.lblNumOfWords.Location = new System.Drawing.Point(766, 115);
+            this.lblNumOfWords.Location = new System.Drawing.Point(768, 115);
             this.lblNumOfWords.Name = "lblNumOfWords";
             this.lblNumOfWords.Size = new System.Drawing.Size(28, 33);
             this.lblNumOfWords.TabIndex = 7;
@@ -223,7 +224,7 @@ namespace Memories
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Open Sans", 20F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.DarkKhaki;
-            this.label5.Location = new System.Drawing.Point(804, 112);
+            this.label5.Location = new System.Drawing.Point(804, 107);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(41, 55);
             this.label5.TabIndex = 8;
@@ -235,7 +236,7 @@ namespace Memories
             this.lblWordsCount.AutoSize = true;
             this.lblWordsCount.BackColor = System.Drawing.Color.Transparent;
             this.lblWordsCount.Font = new System.Drawing.Font("Open Sans", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWordsCount.Location = new System.Drawing.Point(846, 125);
+            this.lblWordsCount.Location = new System.Drawing.Point(846, 118);
             this.lblWordsCount.Name = "lblWordsCount";
             this.lblWordsCount.Size = new System.Drawing.Size(28, 33);
             this.lblWordsCount.TabIndex = 9;
@@ -260,12 +261,40 @@ namespace Memories
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(836, 252);
+            this.label3.Location = new System.Drawing.Point(829, 252);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(50, 33);
             this.label3.TabIndex = 11;
             this.label3.Text = "Sec";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnPause
+            // 
+            this.btnPause.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btnPause.FlatAppearance.BorderColor = System.Drawing.Color.Peru;
+            this.btnPause.FlatAppearance.CheckedBackColor = System.Drawing.Color.Red;
+            this.btnPause.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btnPause.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gold;
+            this.btnPause.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPause.Font = new System.Drawing.Font("Open Sans Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPause.Location = new System.Drawing.Point(514, 348);
+            this.btnPause.Name = "btnPause";
+            this.btnPause.Size = new System.Drawing.Size(165, 60);
+            this.btnPause.TabIndex = 0;
+            this.btnPause.Text = "Pause";
+            this.btnPause.UseVisualStyleBackColor = false;
+            this.btnPause.Click += new System.EventHandler(this.btnPause_Click);
+            // 
+            // cbAutoTranslate
+            // 
+            this.cbAutoTranslate.AutoSize = true;
+            this.cbAutoTranslate.Location = new System.Drawing.Point(14, 369);
+            this.cbAutoTranslate.Name = "cbAutoTranslate";
+            this.cbAutoTranslate.Size = new System.Drawing.Size(139, 24);
+            this.cbAutoTranslate.TabIndex = 12;
+            this.cbAutoTranslate.Text = "Auto Translate";
+            this.cbAutoTranslate.UseVisualStyleBackColor = true;
+            this.cbAutoTranslate.CheckedChanged += new System.EventHandler(this.cbAutoTranslate_CheckedChanged);
             // 
             // Form2
             // 
@@ -273,6 +302,7 @@ namespace Memories
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1072, 452);
+            this.Controls.Add(this.cbAutoTranslate);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lblTimerSec);
             this.Controls.Add(this.lblWordsCount);
@@ -287,6 +317,7 @@ namespace Memories
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.lblWord);
+            this.Controls.Add(this.btnPause);
             this.Controls.Add(this.btnStop);
             this.Controls.Add(this.btnTranslate);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -319,5 +350,7 @@ namespace Memories
         private System.Windows.Forms.Label lblWordsCount;
         private System.Windows.Forms.Label lblTimerSec;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnPause;
+        private System.Windows.Forms.CheckBox cbAutoTranslate;
     }
 }

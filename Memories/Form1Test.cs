@@ -104,12 +104,6 @@ namespace Memories
       }
 
     }
-
-    private void button1_Click(object sender, EventArgs e)
-    {
-      //Mem.addSentenceCol(txt_word,txt_sentence,txt_translation, table);
-    }
-
     private void btnEdit_Click(object sender, EventArgs e)
     {
       DataGridViewRow newDataRow = dataGridView1.Rows[indexRow];

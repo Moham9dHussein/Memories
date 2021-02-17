@@ -18,6 +18,11 @@ namespace Memories
   public partial class Form2 : Form
   {
     Form1Test f1;
+    bool isFormShow = false;
+    bool isPause = false;
+    bool isTranslate = false;
+    string txtTranslate = "";
+    bool isAuto = false;
     DataTable dataTable;
     int time;
     bool random;
@@ -41,8 +46,10 @@ namespace Memories
       }
       //lblTimer.Text = time.ToString();
       dataTable = f1.TableSelected;
-      label6.Text = string.Format("{0} / {1}", 1, dataTable.Rows.Count);
+      lblNumOfWords.Text = dataTable.Rows.Count.ToString();
+      lblTimerSec.Text = time.ToString();
       random = f1.CbRandom.Checked;
+      //lblTranslation.Visible = false; // Method 1 (Show Translation)
       //dataGridView1.DataSource = dataTable;
     }
 
@@ -59,7 +66,7 @@ namespace Memories
       /////////////////
       lblWord.Text = dataTable.Rows[count][0].ToString();
       lblSentence.Text = dataTable.Rows[count][1].ToString();
-      lblTranslation.Text = dataTable.Rows[count][2].ToString();
+      txtTranslate = dataTable.Rows[count][2].ToString();
       /////////////////
       if (i > time)
       {
@@ -73,10 +80,20 @@ namespace Memories
           /////////////////
           lblWord.Text = dataTable.Rows[count - 1][0].ToString();
           lblSentence.Text = dataTable.Rows[count - 1][1].ToString();
-          lblTranslation.Text = dataTable.Rows[count - 1][2].ToString();
+          //lblTranslation.Visible = false; // Method 1 (Show Translation)
+          txtTranslate = dataTable.Rows[count - 1][2].ToString();
           /////////////////
 
-          label6.Text = string.Format("{0} / {1}", count, dataTable.Rows.Count);
+          if (!isAuto)
+          {
+            lblTranslation.Text = "";
+          }
+          else
+          {
+            lblTranslation.Text = txtTranslate;
+          }
+
+          lblWordsCount.Text = count.ToString();
         }
         else
         {
@@ -86,13 +103,85 @@ namespace Memories
           /////////////////
           lblWord.Text = dataTable.Rows[count][0].ToString();
           lblSentence.Text = dataTable.Rows[count][1].ToString();
-          lblTranslation.Text = dataTable.Rows[count][2].ToString();
+          //lblTranslation.Visible = false; // Method 1 (Show Translation)
+          txtTranslate = dataTable.Rows[count][2].ToString();
           /////////////////
-          label6.Text = string.Format("{0} / {1}", count + 1, dataTable.Rows.Count);
+
+          if (!isAuto)
+          {
+            lblTranslation.Text = "";
+          }
+          else
+          {
+            lblTranslation.Text = txtTranslate;
+          }
+
+
+          lblWordsCount.Text = string.Format("{0}", count + 1);
 
         }
       }
-      label4.Text = i.ToString();
+      lblTimerCount.Text = i.ToString();
+    }
+
+    private void btnShowAndHide_Click(object sender, EventArgs e)
+    {
+      if (isFormShow)
+      {
+        isFormShow = false;
+        f1.Hide();
+      }
+      else
+      {
+        isFormShow = true;
+        f1.Show();
+      }
+    }
+
+    private void btnPause_Click(object sender, EventArgs e)
+    {
+
+      if (isPause)
+      {
+        isPause = false;
+        btnPause.Text = "Pause";
+        timer1.Enabled = true;
+      }
+      else
+      {
+        isPause = true;
+        btnPause.Text = "Resume";
+        timer1.Enabled = false;
+      }
+    }
+
+    private void btnTranslate_Click(object sender, EventArgs e)
+    {
+      // Method 1 (Show Translation)
+      // if (!isTranslate)
+      // {
+      //   lblTranslation.Visible = true;
+      //   //isTranslate = false;
+      // }
+
+      // Method 2 (Show Translation)
+      lblTranslation.Text = txtTranslate;
+
+
+    }
+
+    private void cbAutoTranslate_CheckedChanged(object sender, EventArgs e)
+    {
+      if (cbAutoTranslate.Checked)
+      {
+        isAuto = true;
+        lblTranslation.Text = txtTranslate;
+      }
+      else
+      {
+        isAuto = false;
+        lblTranslation.Text = "";
+      }
     }
   }
 }
